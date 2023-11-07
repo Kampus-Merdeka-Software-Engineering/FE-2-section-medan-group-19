@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 19 Capstone Project</title>
+
+    <!-- font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"/>
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- header section starts -->
+
+<section class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-utensils"></i> food. </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#food">food</a>
+        <a href="#gallery">gallery</a>
+        <a href="#menu">menu</a>
+        <a href="#order">order</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</section>
+
+<!-- header section ends -->
+
+<!-- home section starts -->
+
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide" style="background: url(images/home-slide-1.jpg) no-repeat;">
+                <div class="content">
+                    <span>Pizzeria Napoli</span>
+                    <h3>delicious cooking</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(images/home-slide-2.jpg) no-repeat;">
+                <div class="content">
+                    <span>Pizzeria Napoli</span>
+                    <h3>unforgettable experience</h3>
+                    <a href="#" class="btn"> get started</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(images/home-slide-3.jpg) no-repeat;">
+                <div class="content">
+                    <span>Pizzeria Napoli</span>
+                    <h3>authentic kitchen</h3>
+                    <a href="#" class="btn"> get started</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts -->
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="./images/about-img.png" alt="">
+    </div>
+
+    <div class="content">
+        <h3 class="title">welcome to our restaurant</h3>
+        <p>Pizzeria Napoli is an Italian restaurant that pampers customers with authentic Italian flavors. With a warm and welcoming atmosphere, the restaurant presents an appetizing dining experience with a wide selection of delicious pizzas, made from fresh and high-quality ingredients. From the classic Margherita to innovative flavor variations, each slice of pizza is prepared with love and skill, creating an unforgettable culinary sensation. In addition to pizza, Pizzeria Napoli also offers enticing Italian pasta dishes, antipasto and desserts, all paired with a stunning selection of Italian wines. With friendly service and a cozy atmosphere, this restaurant is the ideal place to dine and enjoy the authentic flavors of Italy.</p>
+        <a href="#" class="btn">read more</a>
+        <div class="icons-container">
+            <div class="icons">
+                <img src="./images/about-icon-1.png" alt="">
+                <h3>quality food</h3>
+            </div>
+            <div class="icons">
+                <img src="./images/about-icon-2.png" alt="">
+                <h3>food & drinks</h3>
+            </div>
+            <div class="icons">
+                <img src="./images/about-icon-3.png" alt="">
+                <h3>expert chef</h3>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- food section starts -->
+
+<section class="food" id="food">
+
+    <div class="heading">
+        <span>popular dishes</span>
+        <h3>our delicious food</h3>
+    </div>  
+
+    <div class="swiper food-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide" data-name="food-1">
+                <img src="./images/food-img-4.png" alt="">
+                <h3>Linguine al Frutti di Mare</h3>
+                <div class="price">$39.99</div>
+            </div>
+
+            <div class="swiper-slide slide" data-name="food-2">
+                <img src="./images/food-img-2.png" alt="">
+                <h3>Filetto di Manzo al Tartufo</h3>
+                <div class="price">$55.99</div>
+            </div>
+
+            <div class="swiper-slide slide" data-name="food-3">
+                <img src="./images/food-img-1.png" alt="">
+                <h3>Truffle Trifecta Pizza</h3>
+                <div class="price">$49.99</div>
+            </div>
+
+            <div class="swiper-slide slide" data-name="food-4">
+                <img src="./images/food-img-5.png" alt="">
+                <h3>Fire and Spice Pizza</h3>
+                <div class="price">$45.99</div>
+            </div>
+
+            <div class="swiper-slide slide" data-name="food-5">
+                <img src="./images/food-img-3.png" alt="">
+                <h3>Tortellini con Salsa Panna e Prosciutto</h3>
+                <div class="price">$38.99</div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- food section ends -->
+
+<!-- food preview section starts -->
+
+<section class="food-preview-container">
+
+    <div id="close-preview" class="fas fa-times"></div>
+
+<div class="food-preview" data-target="food-1">
+    <img src="./images/food-img-4.png" alt="">
+    <h3>Linguine al Frutti di Mare</h3>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p>Tender linguine with fresh tomato sauce, served with a mixture of fresh seafood</p>
+    <div class="price">$39.99</div>
+    <a href="#" class="btn">buy now</a>
+</div>
+
+<div class="food-preview" data-target="food-2">
+    <img src="./images/food-img-2.png" alt="">
+    <h3>Filetto di Manzo al Tartufo</h3>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p>Tender pieces of beef filet, served with a delicious truffle sauce, roasted vegetables and mashed potatoes.</p>
+    <div class="price">$55.99</div>
+    <a href="#" class="btn">buy now</a>
+</div>
+
+<div class="food-preview" data-target="food-3">
+    <img src="./images/food-img-1.png" alt="">
+    <h3>Truffle Trifecta Pizza</h3>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p>Indulge in the decadence of truffle with this pizza, featuring a trio of truffle elements alongside mozzarella and crispy pancetta</p>
+    <div class="price">$49.99</div>
+    <a href="#" class="btn">buy now</a>
+</div>
+
+<div class="food-preview" data-target="food-4">
+    <img src="./images/food-img-5.png" alt="">
+    <h3>Fire and Spice Pizza</h3>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p>For those who crave a little heat, this pizza brings together spicy pepperoni, jalapeños, red pepper flakes, and a fiery sriracha drizzle, complemented by mozzarella cheese</p>
+    <div class="price">$45.99</div>
+    <a href="#" class="btn">buy now</a>
+</div>
+
+<div class="food-preview" data-target="food-5">
+    <img src="./images/food-img-3.png" alt="">
+    <h3>Tortellini con Salsa Panna e Prosciutto</h3>
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p>Tortellini pasta stuffed with cheese served with cream sauce, parmesan cheese and crispy prosciutto pieces.</p>
+    <div class="price">$38.99</div>
+    <a href="#" class="btn">buy now</a>
+</div>
+
+</section>
+
+<!-- food preview section ends -->
+
+<!-- gallery section starts -->
+
+<section class="gallery" id="gallery">
+
+    <div class="heading">
+        <span>our gallery</span>
+        <h3>our untold stories</h3>
+    </div>
+
+    <div class="gallery-container">
+
+        <a href="images/food-gallery-img-1.jpg" class="box">
+            <img src="./images/food-gallery-img-1.jpg" alt="">
+            <div class="icon"> <i class="fas fa-plus"></i> </div>
+        </a>
+
+        <a href="images/food-gallery-img-2.jpg" class="box">
+            <img src="./images/food-gallery-img-2.jpg" alt="">
+            <div class="icon"> <i class="fas fa-plus"></i> </div>
+        </a>
+
+        <a href="images/food-gallery-img-3.jpg" class="box">
+            <img src="./images/food-gallery-img-3.jpg" alt="">
+            <div class="icon"> <i class="fas fa-plus"></i> </div>
+        </a>
+
+        <a href="images/food-gallery-img-4.jpg" class="box">
+            <img src="./images/food-gallery-img-4.jpg" alt="">
+            <div class="icon"> <i class="fas fa-plus"></i> </div>
+        </a>
+
+        <a href="images/food-gallery-img-5.jpg" class="box">
+            <img src="./images/food-gallery-img-5.jpg" alt="">
+            <div class="icon"> <i class="fas fa-plus"></i> </div>
+        </a>
+
+        <a href="images/food-gallery-img-6.jpg" class="box">
+            <img src="./images/food-gallery-img-6.jpg" alt="">
+            <div class="icon"> <i class="fas fa-plus"></i> </div>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- menu section starts -->
+
+<section class="menu" id="menu">
+
+    <div class="heading">
+        <span>our menu</span>
+        <h3>our popular dishes</h3>
+    </div>
+
+    <div class="swiper menu-slider">
+
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide slide">
+                <h3 class="title">apataizer</h3>
+                <div class="box-container">
+                    <div class="box">
+                        <div class="info">
+                            <h3>Bruschetta al Pomodoro e Basilico</h3>
+                            <p>lices of toasted Italian bread topped with ripe tomatoes, fresh basil, garlic, extra virgin olive oil, and a sprinkle of salt</p>
+                        </div>
+                        <div class="price">$29.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Caprese Salad</h3>
+                            <p>A delightful salad featuring slices of ripe tomatoes, fresh mozzarella, basil leaves, and a drizzle of extra virgin olive oil</p>
+                        </div>
+                        <div class="price">$25.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Antipasto Platter</h3>
+                            <p>A delightful assortment of cured meats, cheeses, olives, marinated artichoke hearts, and roasted vegetables</p>
+                        </div>
+                        <div class="price">$40.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Beef Carpaccio</h3>
+                            <p>Thin slices of raw beef served with balsamic vinegar, parmesan cheese, arugula, and capers</p>
+                        </div>
+                        <div class="price">$40.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Insalata di Mare</h3>
+                            <p>A fresh seafood salad featuring a mix of shrimp, mussels, calamari, and octopus, dressed with lemon and extra virgin olive oil</p>
+                        </div>
+                        <div class="price">$38.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Crostini ai Funghi</h3>
+                            <p>Slices of toasted bread served with a creamy mushroom sauce, sautéed mushrooms, onions, and parmesan cheese</p>
+                        </div>
+                        <div class="price">$23.99</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <h3 class="title">main course</h3>
+                <div class="box-container">
+                    <div class="box">
+                        <div class="info">
+                            <h3>Linguine al Frutti di Mare</h3>
+                            <p>Tender linguine with fresh tomato sauce, served with a mixture of fresh seafood</p>
+                        </div>
+                        <div class="price">$39.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Filetto di Manzo al Tartufo</h3>
+                            <p>Tender pieces of beef filet, served with a delicious truffle sauce, roasted vegetables and mashed potatoes</p>
+                        </div>
+                        <div class="price">$55.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Tortellini con Salsa Panna e Prosciutto</h3>
+                            <p>Tortellini pasta stuffed with cheese served with cream sauce, parmesan cheese and crispy prosciutto pieces</p>
+                        </div>
+                        <div class="price">$41.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Lasagna al Forno</h3>
+                            <p>Layers of tender pasta sheets, ricotta cheese, ground beef, marinara sauce, and a blend of mozzarella and parmesan cheese</p>
+                        </div>
+                        <div class="price">$44.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Bistecca Fiorentina</h3>
+                            <p>Thin slices of veal, topped with prosciutto and fresh sage, sautéed in white wine and butter</p>
+                        </div>
+                        <div class="price">$49.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Pesce al Forno</h3>
+                            <p>Fresh catch of the day, seasoned and oven-baked with herbs, lemon, extra virgin olive oil with sautéed spinach and roasted cherry tomatoes.</p>
+                        </div>
+                        <div class="price">$47.99</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <h3 class="title">main course</h3>
+                <div class="box-container">
+                    <div class="box">
+                        <div class="info">
+                            <h3>Lasagna al Forno</h3>
+                            <p>Layers of tender lasagna noodles filled with a flavorful mixture of ground beef, tomato sauce, ricotta cheese, mozzarella, and parmesan</p>
+                        </div>
+                        <div class="price">$44.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Ravioli al Tartufo Nero</h3>
+                            <p>Soft ravioli stuffed with black truffle and cheese filling, served in a creamy truffle sauce and grated Parmigiano-Reggiano</p>
+                        </div>
+                        <div class="price">$39.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Truffle Trifecta Pizza</h3>
+                            <p>Indulge in the decadence of truffle with this pizza, featuring a trio of truffle elements alongside mozzarella and crispy pancetta</p>
+                        </div>
+                        <div class="price">$49.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Lasagna Verde</h3>
+                            <p>Green spinach lasagna sheets layered with a combination of ground veal, spinach, béchamel sauce, and parmesan cheese</p>
+                        </div>
+                        <div class="price">$33.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Ravioli di Mare</h3>
+                            <p>Seafood-filled ravioli with a mix of shrimp, crab, and scallops in a creamy tomato and white wine sauce</p>
+                        </div>
+                        <div class="price">$38.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Fire and Spice Pizza</h3>
+                            <p>For those who crave a little heat, this pizza brings together spicy pepperoni, jalapeños, red pepper flakes, and a fiery sriracha drizzle, complemented by mozzarella cheese</p>
+                        </div>
+                        <div class="price">$45.99</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <h3 class="title">drinks</h3>
+                <div class="box-container">
+                    <div class="box">
+                        <div class="info">
+                            <h3>Aperol Spritz</h3>
+                            <p>A refreshing and bubbly aperitif made with Aperol, Prosecco, and a splash of soda water</p>
+                        </div>
+                        <div class="price">$20.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Limoncello Martini</h3>
+                            <p>A zesty and citrusy cocktail made with Limoncello liqueur, vodka, and freshly squeezed lemon juice</p>
+                        </div>
+                        <div class="price">$21.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Espresso</h3>
+                            <p> A classic Italian coffee with a rich and concentrated coffee flavor, topped with a layer of cream</p>
+                        </div>
+                        <div class="price">$19.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Chinotto</h3>
+                            <p>A popular Italian soft drink made from the bitter fruit of the myrtle-leaved orange tree</p>
+                        </div>
+                        <div class="price">$19.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Sicilian Blood Orange Soda</h3>
+                            <p>A sweet and tangy soda made from the juice of ripe Sicilian blood oranges</p>
+                        </div>
+                        <div class="price">$24.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Mineral Water</h3>
+                            <p></p>
+                        </div>
+                        <div class="price">$9.99</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <h3 class="title">dessert</h3>
+                <div class="box-container">
+                    <div class="box">
+                        <div class="info">
+                            <h3>Tiramisu</h3>
+                            <p>A dessert consisting of layers of ladyfingers mixed with mascarpone and sprinkled with cocoa powder</p>
+                        </div>
+                        <div class="price">$16.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Panna Cotta</h3>
+                            <p>A velvety custard-like dessert, served with a berry compote or caramel sauce</p>
+                        </div>
+                        <div class="price">$18.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Affogato al Caffè</h3>
+                            <p>A delightful combination of vanilla gelato or ice cream "drowned" in a shot of hot espresso</p>
+                        </div>
+                        <div class="price">$19.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Torta Caprese</h3>
+                            <p>A moist chocolate and almond cake, served with powdered sugar and whipped cream</p>
+                        </div>
+                        <div class="price">$13.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Sfogliatella</h3>
+                            <p>A flaky and layered pastry filled with sweet ricotta cheese, candied citrus, and hints of cinnamon</p>
+                        </div>
+                        <div class="price">$19.99</div>
+                    </div>
+                    <div class="box">
+                        <div class="info">
+                            <h3>Gelato</h3>
+                            <p>A selection of traditional Italian ice creams in various flavors</p>
+                        </div>
+                        <div class="price">$15.99</div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- menu section ends -->
+
+<!-- order section starts -->
+
+<section id="order" class="order">
+
+    <div class="heading">
+        <span>order now</span>
+        <h3>fast home delivery</h3>
+    </div>
+
+    <form action="">
+        <div class="box-container">
+            <div class="box">
+                <div class="inputBox">
+                    <span>full name</span>
+                    <input type="text" placeholder="enter your name">
+                </div>
+                <div class="inputBox">
+                    <span>food name</span>
+                    <input type="text" placeholder="food you want">
+                </div>
+                <div class="inputBox">
+                    <span>order details</span>
+                    <input type="text" placeholder="specifics with food">
+                </div>
+                <div class="inputBox">
+                    <span>your address</span>
+                    <textarea name="" placeholder="enter your address" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="box">
+                <div class="inputBox">
+                    <span>number</span>
+                    <input type="number" placeholder="enter your number">
+                </div>
+                <div class="inputBox">
+                    <span>how much</span>
+                    <input type="number" placeholder="how many you want">
+                </div>
+                <div class="inputBox">
+                    <span>when you want</span>
+                    <input type="datetime-local">
+                </div>
+                <div class="inputBox">
+                    <span>our address</span>
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7777004385853!2d107.60638797419278!3d-6.917159467699629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e61895781f2b%3A0xfdec42a1cab3c3fa!2sBraga%20CityWalk!5e0!3m2!1sid!2sid!4v1698478556489!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>"
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="order now" class="btn">
+    </form>
+
+</section>
+
+<!-- order section ends -->
+
+<!-- blogs section starts -->
+
+<section class="blogs" id="blogs">
+
+    <div class="heading">
+        <span>our blogs</span>
+        <h3>our latest posts</h3>
+    </div>
+
+    <div class="swiper blogs-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="./images/blog-image-1.jpg" alt="">
+                    <span>News</span>
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"> <i class="fas fa-calendar"></i> 21st May, 2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                    <a href="#" class="title">News</a>
+                    <p>Savoring Italy: A Culinary Tour of Pizzeria Napoli</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="./images/blog-image-2.jpg" alt="">
+                    <span>News</span>
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"> <i class="fas fa-calendar"></i> 01st June,2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                    <a href="#" class="title">News</a>
+                    <p>Hidden Gem Alert: Pizzeria Napoli - Your Gateway to Italian Delights</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="./images/blog-image-3.jpg" alt="">
+                    <span>News</span>
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"> <i class="fas fa-calendar"></i> 18st June,2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                    <a href="#" class="title">News</a>
+                    <p>A Taste of Tuscany: Pizzeria Napoli's Italian Cuisine Adventure</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="./images/blog-image-4.jpg" alt="">
+                    <span>Gelato</span>
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"> <i class="fas fa-calendar"></i> 28st June,2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                    <a href="#" class="title">News</a>
+                    <p>Gelato Dreams and Pizza Fantasies: Pizzeria Napoli Unveiled</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="./images/blog-image-5.jpg" alt="">
+                    <span>Pizza</span>
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"> <i class="fas fa-calendar"></i> 5st July,2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                    <a href="#" class="title">News</a>
+                    <p>Pizza Perfection: Exploring Italy's Iconic Dish</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="./images/blog-image-6.jpg" alt="">
+                    <span>Lasagna</span>
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"> <i class="fas fa-calendar"></i> 21st July,2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                    <a href="#" class="title">News</a>
+                    <p>Lasagna Love: Layers of Comfort in Every Bite</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+   
+</section>
+
+<!-- blog section ends -->
+
+<!-- footer section starts -->
+
+<section class="footer">
+
+    <div class="icons-container">
+
+        <div class="icons">
+            <i class="fas fa-clock"></i>
+            <h3>opening hours</h3>
+            <p>09:00am to 10:00pm</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-phone"></i>
+            <h3>phone</h3>
+            <p>+123-456-7890</p>
+            <p>+111-222-3333</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-envelope"></i>
+            <h3>email</h3>
+            <p>capstonproject19@gmail.com</p>
+            <p>pizzerianapoli@gmail.com</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-map"></i>
+            <h3>address</h3>
+            <p>jl. Braga, Bandung, Jawa Barat</p>
+        </div>
+
+    </div>
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+
+    <div class="credit">Created by <span>Group 19 Team J</span> | all right reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+<!-- custom js file link -->
+<script src="js/script.js"></script>
+
+<script>
+    lightGallery(document.querySelector('.gallery .gallery-container'));
+</script>
+
+</body>
+</html>
