@@ -2,9 +2,19 @@ let navbar = document.querySelector('.header .navbar');
 let menuBtn = document.querySelector('#menu-btn');
 
 menuBtn.onclick = () =>{
-    menuBtn.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
+  menuBtn.classList.toggle('fa-times');
+  navbar.classList.toggle('active');
 };
+
+let loginForm = document.querySelector('.login-form-container');
+
+document.querySelector('#login-btn').onclick = () =>{
+  loginForm.classList.toggle('active');
+}
+
+document.querySelector('#close-login-btn').onclick = () =>{
+  loginForm.classList.remove('active');
+}
 
 var swiper = new Swiper(".home-slider", {
     grabCursor:true,
