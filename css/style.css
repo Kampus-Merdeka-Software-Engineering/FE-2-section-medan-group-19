@@ -113,6 +113,107 @@ section{
     color:var(--peru);
 }
 
+.header .icons div,
+.header .icons a{
+    font-size: 2rem;
+    margin-left: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .icons div:hover,
+.header .icons a:hover{
+    color: var(--peru);
+}
+
+.login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-bg);
+    position: fixed;
+    top: 0; right: -105%;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form-container.active{
+    right:0;
+}
+
+.login-form-container form{
+    background: white;
+    border: var(--border);
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+    margin: 2rem;
+}
+
+.login-form-container form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+}
+
+.login-form-container form span{
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.login-form-container form .box{
+    width: 100%;
+    margin: 0.7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.login-form-container form .checkbox{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.login-form-container form .checkbox label{
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer; 
+}
+
+.login-form-container form .btn{
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.login-form-container form p{
+    padding-top: 0.8rem;
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+.login-form-container form p a{
+    color: var(--peru);
+    text-decoration: underline;
+}
+
+.login-form-container #close-login-btn{
+    position: absolute;
+    top:1.5rem; right:2.5rem;
+    font-size: 5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
 #menu-btn{
     font-size: 2.5rem;
     cursor: pointer;
@@ -418,133 +519,6 @@ section{
 
 .gallery .gallery-container .box:hover .icon{
     display: flex;
-}
-
-.menu{
-    background: var(--light-bg);
-}
-
-.menu .slide .title{
-    padding: 1rem;
-    font-size: 3rem;
-    color: var(--white);
-    background: var(--peru);
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.menu .slide .box-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding-bottom: 4rem;
-}
-
-.menu .slide .box-container .box{
-    flex: 1 1 41rem;
-    background: var(--white);
-    padding: 2rem;
-    box-shadow: var(--box-shadow);
-    border: var(--border);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: space-between;
-}
-
-.menu .slide .box-container .box h3{
-    font-size: 2.5rem;
-    color: var(--black);
-    padding-bottom: 0.5rem;
-}
-
-.menu .slide .box-container .box p{
-    font-size: 1.6rem;
-    color: var(--light-black);
-    line-height: 2;
-    text-transform: initial;
-}
-
-.menu .slide .box-container .box .price{
-    font-size: 2.5rem;
-    color: var(--peru);
-}
-
-.menu .slide .box-container .box:hover{
-    transform: scale(0.9);
-
-}
-
-.order{
-    background: var(--peru);
-}
-
-.order .heading span{
-    color: var(--white);
-}
-
-.order .heading h3{
-    color: var(--white);
-}
-
-.order form{
-    padding: 2rem;
-    background: var(--white);
-    box-shadow: var(--box-shadow);
-}
-
-.order form .box-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.order form .box-container .box{
-    flex: 1 1 41rem;
-}
-
-.order form .box-container .box .inputBox input,
-.order form .box-container .box .inputBox textarea{
-    width: 100%;
-    margin: 1rem 0;
-    padding: 1.2rem 1.4rem;
-    font-size: 1.7rem;
-    color: var(--light-black);
-    border: var(--border);
-    text-transform: none;
-}
-
-.order form .box-container .box .inputBox input::placeholder,
-.order form .box-container .box .inputBox textarea::placeholder{
-    text-transform: capitalize;
-}
-
-.order form .box-container .box .inputBox input:focus,
-.order form .box-container .box .inputBox textarea:focus{
-    background: var(--black);
-    color: var(--white);
-}
-
-.order form .box-container .box .inputBox input:focus::placeholder,
-.order form .box-container .box .inputBox textarea:focus::placeholder{
-    color: var(--light-white);
-}
-
-.order form .box-container .box .inputBox textarea{
-    height: 20rem;
-    resize: none;
-}
-
-.order form .box-container .box .inputBox .map{
-    height: 20rem;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0.5rem 0;
-}
-
-.order form .box-container .box .inputBox span{
-    color: var(--light-black);
-    font-size: 2rem;
 }
 
 .blogs{
