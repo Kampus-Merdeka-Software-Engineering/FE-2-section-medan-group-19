@@ -16,6 +16,16 @@ document.querySelector('#close-login-btn').onclick = () =>{
   loginForm.classList.remove('active');
 }
 
+let cartForm = document.querySelector('.cart-container');
+
+document.querySelector('#cart-btn').onclick = () =>{
+  cartForm.classList.toggle('active');
+}
+
+document.querySelector('#close-cart-btn').onclick = () =>{
+  cartForm.classList.remove('active');
+}
+
 var swiper = new Swiper(".home-slider", {
     grabCursor:true,
     loop:true,

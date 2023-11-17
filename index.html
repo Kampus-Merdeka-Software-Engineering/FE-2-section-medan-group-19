@@ -35,8 +35,7 @@
     </nav>
 
     <div class="icons">
-        <div id="search-btn" class="fas fa-search"></div>
-        <a href="#" class="fas fa-shopping-cart"></a>
+        <a id="cart-btn" class="fas fa-shopping-cart"></a>
         <div id="login-btn" class="fas fa-user"></div>
     </div>
 
@@ -66,6 +65,89 @@
         <p>forget password <a href="#">click here</a></p>
         <p>don't have an account <a href="#">create one</a></p>
     </form>
+</div>
+
+<!-- cart and checkout section -->
+<div class="cart-container">
+
+    <div id="close-cart-btn" class="fas fa-times"></div>
+
+    <div class="checkout-container">
+        <div class="cart-list-container">
+            <h1 class="cart-heading">CART</h1>
+            <ul class="cart-list">
+                <li>
+                    <div class="food-img"><img src="images/food-img-5.png"></div>
+                    <div class="food-name">Speedy Supreme</div>
+                    <div class="cart-add-remove">
+                        <button>-</button>
+                        <div class="count">1</div>
+                        <button>+</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="food-img"><img src="images/drink_1.jpg"></div>
+                    <div class="food-name">Citrus Splash</div>
+                    <div class="cart-add-remove">
+                        <button>-</button>
+                        <div class="count">1</div>
+                        <button>+</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="order-container">
+            <h1 class="price-header">PRICE</h1>
+            <table class="price-summary">
+                <tr>
+                    <td>Speedy Supreme</td>
+                    <td class="cart-price">$5.5</td>
+                </tr>
+                <tr>
+                    <td>Citrus Splash</td>
+                    <td class="cart-price">$2.5</td>
+                </tr>
+                <tr>
+                    <td><h3>Total</h3></td>
+                    <td class="cart-price">$8.0</td>
+                </tr>
+            </table>
+
+            <h1 class="order-heading">ORDER</h1>
+                <form class="order-form">
+                    <div>
+                        <span>Full Name</span>
+                        <label for="full-name"></label>
+                        <input 
+                          type="text"
+                          placeholder="Enter your full name"
+                          class="box"
+                        >
+                    </div>
+                    <div>
+                        <span>Number</span>
+                        <label for="number"></label>
+                        <input 
+                          type="text"
+                          placeholder="Enter your number"
+                          class="box"
+                        >
+                    </div>
+                    <div>
+                        <span>Address</span>
+                        <label for="location"></label>
+                        <input 
+                          type="text"
+                          placeholder="Enter your location"
+                          class="box"
+                        >
+                    </div>
+                    <input type="button" value="Order" class="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- home section starts -->

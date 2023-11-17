@@ -126,7 +126,7 @@ section{
     color: var(--peru);
 }
 
-.login-form-container{
+.login-form-container, .cart-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +138,7 @@ section{
     width: 100%;
 }
 
-.login-form-container.active{
+.login-form-container.active, .cart-container.active{
     right:0;
 }
 
@@ -206,12 +206,107 @@ section{
     text-decoration: underline;
 }
 
-.login-form-container #close-login-btn{
+#close-login-btn, #close-cart-btn{
     position: absolute;
     top:1.5rem; right:2.5rem;
     font-size: 5rem;
     color: var(--black);
     cursor: pointer;
+}
+
+.checkout-container{
+    display: flex;
+    font-size: 1.2rem;
+    max-height: 95%;
+    overflow-y: auto;
+}
+
+.cart-heading{
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.cart-list img{
+    width: 80px;
+}
+
+.cart-list li{
+    display: grid;
+    grid-template-columns: 100px repeat(2, 1fr);
+    row-gap: 20px;
+}
+
+.cart-list li .food-img{
+    margin-left: 5px;
+}
+
+.cart-list li .food-name{
+    display: flex;
+    align-items: center;
+}
+
+.cart-list li .cart-add-remove{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.cart-list button{
+    padding: 3px 7px;
+}
+
+.cart-list li .count{
+    margin: 0 10px;
+}
+
+.cart-list-container, .order-container{
+    width : 40rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+
+.price-summary{
+    border-collapse: separate;
+    border-spacing: 0 1.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border-bottom: solid 1px;
+}
+
+.cart-price{
+    text-align: end;
+}
+
+.order-heading{
+    margin-bottom: 1.0rem;
+}
+
+.order-form span{
+    padding-top: 2rem;
+}
+
+.order-form input{
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar{
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--peru);
 }
 
 #menu-btn{
@@ -669,6 +764,7 @@ section{
 .footer .credit span{
     color: var(--peru);
 }
+
 
 /* media queris */
 
