@@ -36,7 +36,6 @@
 
     <div class="icons">
         <a id="cart-btn" class="fas fa-shopping-cart"></a>
-        <div id="login-btn" class="fas fa-user"></div>
     </div>
 
     <div id="menu-btn" class="fas fa-bars"></div>
@@ -44,28 +43,6 @@
 </section>
 
 <!-- header section ends -->
-
-<!-- login form -->
-
-<div class="login-form-container">
-
-    <div id="close-login-btn" class="fas fa-times"></div>
-
-    <form action="">
-        <h3>sign in</h3>
-        <span>username</span>
-        <input type="email" name="" class="box" placeholder="enter your email" id="">
-        <span>password</span>
-        <input type="password" name="" class="box" placeholder="enter your password" id="">
-        <div class="checkbox">
-            <input type="checkbox" name="" id="remember-me">
-            <label for="remember-me"> remember me </label>
-        </div>
-        <input type="sumbmit" value="sign in" class="btn">
-        <p>forget password <a href="#">click here</a></p>
-        <p>don't have an account <a href="#">create one</a></p>
-    </form>
-</div>
 
 <!-- cart and checkout section -->
 <div class="cart-container">
@@ -76,24 +53,6 @@
         <div class="cart-list-container">
             <h1 class="cart-heading">CART</h1>
             <ul class="cart-list">
-                <li>
-                    <div class="food-img"><img src="images/food-img-5.png"></div>
-                    <div class="food-name">Speedy Supreme</div>
-                    <div class="cart-add-remove">
-                        <button>-</button>
-                        <div class="count">1</div>
-                        <button>+</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="food-img"><img src="images/drink_1.jpg"></div>
-                    <div class="food-name">Citrus Splash</div>
-                    <div class="cart-add-remove">
-                        <button>-</button>
-                        <div class="count">1</div>
-                        <button>+</button>
-                    </div>
-                </li>
             </ul>
         </div>
         <div class="order-container">
@@ -109,7 +68,7 @@
                 </tr>
                 <tr>
                     <td><h3>Total</h3></td>
-                    <td class="cart-price">$8.0</td>
+                    <td class="cart-price"><h3>$8.0</h3></td>
                 </tr>
             </table>
 
@@ -235,42 +194,10 @@
 
     <div class="swiper food-slider">
 
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide slide" data-name="food-1">
-                <img src="./images/pizza_1.png" alt="">
-                <h3>Speedy Supreme</h3>
-                <div class="price">$5.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-2">
-                <img src="./images/pizza_2.jpg" alt="">
-                <h3>Pepperoni Paradise</h3>
-                <div class="price">$5.0</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-3">
-                <img src="./images/pizza_3.jpg" alt="">
-                <h3>Hawaiian Express</h3>
-                <div class="price">$4.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-4">
-                <img src="./images/pizza_4.jpg" alt="">
-                <h3>Veggie Delight</h3>
-                <div class="price">$4.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-5">
-                <img src="./images/pizza_5.png" alt="">
-                <h3>Mighty Meat</h3>
-                <div class="price">$6.0</div>
-            </div>
-
+        <div id="food-swiper" class="swiper-wrapper"></div>
         </div>
 
         <div class="swiper-pagination"></div>
-
     </div>
 
 </section>
@@ -283,156 +210,7 @@
 
     <div id="close-preview" class="fas fa-times"></div>
 
-<div class="food-preview" data-target="food-1">
-    <img src="./images/pizza_1.png" alt="">
-    <h3>Speedy Supreme</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>pizza topped with tomato sauce, mozzarella cheese, pepperoni, mushrooms, bell peppers, and sausage slices</p>
-    <div class="price">$5.5</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-2">
-    <img src="./images/pizza_2.jpg" alt="">
-    <h3>Pepperoni Paradise</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>pizza topped with pepperoni, tomato sauce, mozzarella cheese, and a sprinkle of oregano</p>
-    <div class="price">$5.0</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-3">
-    <img src="./images/pizza_3.jpg" alt="">
-    <h3>Hawaiian Express</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>pizza topped with ham, pineapple chunks, tomato sauce, and mozzarella cheese</p>
-    <div class="price">$4.5</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-4">
-    <img src="./images/pizza_4.jpg" alt="">
-    <h3>Veggie Delight</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>pizza topped with pesto sauce, cherry tomatoes, bell peppers, courgettes and feta cheese </p>
-    <div class="price">$4.5</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-5">
-    <img src="./images/pizza_5.png" alt="">
-    <h3>Mighty Meat</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>pizza topped with beef, chicken, sausage, and pepperoni on a layer of mozzarella cheese and tomato sauce</p>
-    <div class="price">$6.0</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-6">
-    <img src="./images/drink_1.jpg" alt="">
-    <h3>Citrus Splash</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>a refreshing combination of orange, lemon and lime, prepared with shaved ice </p>
-    <div class="price">$2.5</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-7">
-    <img src="./images/drink_2.jpg" alt="">
-    <h3>Wave Spritzer</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>soft drink with fresh watermelon juice, sparkling water and ice, giving a refreshing sensation</p>
-    <div class="price">$2.0</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-8">
-    <img src="./images/drink_3.jpg
-    " alt="">
-    <h3>Iced Caramel</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>Cold coffee blended with soft caramel syrup and served over ice</p>
-    <div class="price">$3.0</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-9">
-    <img src="./images/drink_4.jpg" alt="">
-    <h3>Mint Cooler</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>drink with a blend of fresh cucumber, mint leaves, and sparkling water that gives a refreshing sensation</p>
-    <div class="price">$1.8</div>
-    <button class="btn">add to cart</button>
-</div>
-
-<div class="food-preview" data-target="food-10">
-    <img src="./images/drink_5.jpg" alt="">
-    <h3>Peach Paradise</h3>
-    <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-    </div>
-    <p>drink with a blend of peach juice, soda, and fresh fruit pieces, giving it a rich and refreshing fruity flavor</p>
-    <div class="price">$2.0</div>
-    <button class="btn">add to cart</button>
-</div>
+    <div id="menu-previews"></div>
 
 </section>
 
@@ -449,36 +227,7 @@
 
     <div class="swiper food-slider">
 
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide slide" data-name="food-6">
-                <img src="./images/drink_1.jpg" alt="">
-                <h3>Citrus Splash</h3>
-                <div class="price">$2.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-7">
-                <img src="./images/drink_2.jpg" alt="">
-                <h3>Wave Spritzer</h3>
-                <div class="price">$2.0</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-8">
-                <img src="./images/drink_3.jpg" alt="">
-                <h3>Iced Caramel</h3>
-                <div class="price">$3.0</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-9">
-                <img src="./images/drink_4.jpg" alt="">
-                <h3>Mint Cooler</h3>
-                <div class="price">$1.8</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-10">
-                <img src="./images/drink_5.jpg" alt="">
-                <h3>Peach Paradise</h3>
-                <div class="price">$2.0</div>
+        <div id="drink-swiper" class="swiper-wrapper">
             </div>
 
         </div>
@@ -706,14 +455,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
-
 <!-- custom js file link -->
 <script src="js/script.js"></script>
-
-<script>
-    lightGallery(document.querySelector('.gallery .gallery-container'));
-</script>
 
 </body>
 </html>
