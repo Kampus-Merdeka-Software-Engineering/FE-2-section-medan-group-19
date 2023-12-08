@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', async() => {
   const response = await fetch(`${API_URL}/menu`);
 
   const menuData = await response.json();
-  console.log(menuData);
 
   // untuk pilihan menu makanan
   const foodContainer = document.querySelector('#food-swiper');
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       slide.dataset.name = `food-${item.menu_id}`;
 
       const img = document.createElement('img');
-      img.src = './images/pizza_1.png';
+      img.src = `./images/menu_${item.menu_id}.jpg`;
 
       const h3 = document.createElement('h3');
       h3.textContent = item.name;
@@ -42,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       slide.dataset.name = `food-${item.menu_id}`;
 
       const img = document.createElement('img');
-      img.src = './images/drink_1.jpg';
+      img.src = `./images/menu_${item.menu_id}.jpg`;
 
       const h3 = document.createElement('h3');
       h3.textContent = item.name;
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       foodPreview.dataset.target = `food-${item.menu_id}`;
 
       const img = document.createElement('img');
-      img.src = `./images/pizza_1.png`;
+      img.src = `./images/menu_${item.menu_id}.jpg`;
 
       const h3 = document.createElement('h3');
       h3.textContent = item.name;
@@ -90,6 +89,19 @@ document.addEventListener('DOMContentLoaded', async() => {
       const addToCartBtn = document.createElement('button');
       addToCartBtn.className = 'btn';
       addToCartBtn.textContent = 'add to cart';
+
+      addToCartBtn.addEventListener('click', ( ) =>{
+        fetch(`${API_URL}/cart/${item.menu_id}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type' : 'application/json',
+          },
+        })
+        .then(response => {
+          console.log('Item added to cart!');
+          UpdateCart();
+        })
+      })
 
       foodPreview.appendChild(img);
       foodPreview.appendChild(h3);
@@ -126,7 +138,131 @@ document.addEventListener('DOMContentLoaded', async() => {
     });
 });
 
-// next api
+// to be corrected
+
+async function UpdateCart() {
+  const response = await fetch(`${API_URL}/cart`);
+  
+  const cartData = await response.json();
+
+  // cart item list
+
+  const cartList = document.querySelector('.cart-list');
+  while (cartList.firstChild){
+    cartList.removeChild(cartList.firstChild);
+  }
+  cartData.forEach(item => {
+      const list = document.createElement('li');
+
+      const foodImageDiv = document.createElement('div');
+      foodImageDiv.className = 'food-img';
+      const foodImage = document.createElement('img');
+      foodImage.src = `./images/menu_${item.menu_id}.jpg`;
+      foodImageDiv.appendChild(foodImage);
+
+      const foodNameDiv = document.createElement('div');
+      foodNameDiv.className = 'food-name';
+      foodNameDiv.textContent = item.name;
+
+      const cartAddRemoveDiv = document.createElement('div');
+      cartAddRemoveDiv.className = 'cart-add-remove';
+
+      const decreaseButton = document.createElement('button');
+      decreaseButton.textContent = '-';
+      
+      decreaseButton.addEventListener('click', ( ) =>{
+        fetch(`${API_URL}/cart/${item.menu_id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type' : 'application/json',
+          },
+        })
+        .then(response => {
+          console.log('Item deleted from cart!');
+          UpdateCart();
+        })
+      })
+
+      const countDiv = document.createElement('div');
+      countDiv.className = 'count';
+      countDiv.textContent = item.quantity;
+
+      const increaseButton = document.createElement('button');
+      increaseButton.textContent = '+';
+
+      increaseButton.addEventListener('click', ( ) =>{
+        fetch(`${API_URL}/cart/${item.menu_id}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type' : 'application/json',
+          },
+        })
+        .then(response => {
+          console.log('Item added to cart!');
+          UpdateCart();
+        })
+      })
+
+      cartAddRemoveDiv.appendChild(decreaseButton);
+      cartAddRemoveDiv.appendChild(countDiv);
+      cartAddRemoveDiv.appendChild(increaseButton);
+
+      list.appendChild(foodImageDiv);
+      list.appendChild(foodNameDiv);
+      list.appendChild(cartAddRemoveDiv);
+
+      cartList.appendChild(list);
+  });
+
+  // item in order list
+  const priceSummary = document.querySelector('.price-summary');
+  let total = 0.0;
+  while (priceSummary.rows.length > 0){
+    priceSummary.deleteRow(0);
+  }
+
+  cartData.forEach(item => {
+    total += item.price * item.quantity;
+    const tableRow = document.createElement('tr');
+
+    const foodNameCell = document.createElement('td');
+    foodNameCell.textContent = item.name;
+
+    const cartPriceCell = document.createElement('td');
+    cartPriceCell.className = 'cart-price';
+    cartPriceCell.textContent = `$${item.price * item.quantity}`;
+
+    tableRow.appendChild(foodNameCell);
+    tableRow.appendChild(cartPriceCell);
+
+    priceSummary.appendChild(tableRow);
+  });
+  const tableRow = document.createElement('tr');
+  const totalPriceCell = document.createElement('td');
+  const totalPriceText = document.createElement('h3');
+  totalPriceText.innerText = "Total";
+  const totalPrice = document.createElement('td');
+  totalPrice.className = "cart-price";
+  const totalPriceBold = document.createElement('h3');
+  totalPriceBold.innerText = `$${total}`;
+
+  totalPriceCell.appendChild(totalPriceText);
+  totalPrice.appendChild(totalPriceBold);
+  tableRow.appendChild(totalPriceCell);
+  tableRow.appendChild(totalPrice);
+
+  priceSummary.appendChild(tableRow);
+}
+
+document.addEventListener('DOMContentLoaded', async() => {
+  fetch(`${API_URL}/cart/`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type' : 'application/json',
+    },
+  })
+  UpdateCart();
+})
 
 // api end
 
@@ -137,16 +273,6 @@ menuBtn.onclick = () =>{
   menuBtn.classList.toggle('fa-times');
   navbar.classList.toggle('active');
 };
-
-let loginForm = document.querySelector('.login-form-container');
-
-document.querySelector('#login-btn').onclick = () =>{
-  loginForm.classList.toggle('active');
-}
-
-document.querySelector('#close-login-btn').onclick = () =>{
-  loginForm.classList.remove('active');
-}
 
 let cartForm = document.querySelector('.cart-container');
 
