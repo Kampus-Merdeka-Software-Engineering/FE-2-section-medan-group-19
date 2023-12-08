@@ -50,21 +50,7 @@
 <div class="login-form-container">
 
     <div id="close-login-btn" class="fas fa-times"></div>
-
-    <form action="">
-        <h3>sign in</h3>
-        <span>username</span>
-        <input type="email" name="" class="box" placeholder="enter your email" id="">
-        <span>password</span>
-        <input type="password" name="" class="box" placeholder="enter your password" id="">
-        <div class="checkbox">
-            <input type="checkbox" name="" id="remember-me">
-            <label for="remember-me"> remember me </label>
-        </div>
-        <input type="sumbmit" value="sign in" class="btn">
-        <p>forget password <a href="#">click here</a></p>
-        <p>don't have an account <a href="#">create one</a></p>
-    </form>
+    <div id="data-container"></div>
 </div>
 
 <!-- cart and checkout section -->
@@ -235,42 +221,10 @@
 
     <div class="swiper food-slider">
 
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide slide" data-name="food-1">
-                <img src="./images/pizza_1.png" alt="">
-                <h3>Speedy Supreme</h3>
-                <div class="price">$5.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-2">
-                <img src="./images/pizza_2.jpg" alt="">
-                <h3>Pepperoni Paradise</h3>
-                <div class="price">$5.0</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-3">
-                <img src="./images/pizza_3.jpg" alt="">
-                <h3>Hawaiian Express</h3>
-                <div class="price">$4.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-4">
-                <img src="./images/pizza_4.jpg" alt="">
-                <h3>Veggie Delight</h3>
-                <div class="price">$4.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-5">
-                <img src="./images/pizza_5.png" alt="">
-                <h3>Mighty Meat</h3>
-                <div class="price">$6.0</div>
-            </div>
-
+        <div id="food-swiper" class="swiper-wrapper"></div>
         </div>
 
         <div class="swiper-pagination"></div>
-
     </div>
 
 </section>
@@ -283,7 +237,8 @@
 
     <div id="close-preview" class="fas fa-times"></div>
 
-<div class="food-preview" data-target="food-1">
+    <div id="menu-previews"></div>
+<!-- <div class="food-preview" data-target="food-1">
     <img src="./images/pizza_1.png" alt="">
     <h3>Speedy Supreme</h3>
     <div class="stars">
@@ -432,7 +387,7 @@
     <p>drink with a blend of peach juice, soda, and fresh fruit pieces, giving it a rich and refreshing fruity flavor</p>
     <div class="price">$2.0</div>
     <button class="btn">add to cart</button>
-</div>
+</div> -->
 
 </section>
 
@@ -449,36 +404,7 @@
 
     <div class="swiper food-slider">
 
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide slide" data-name="food-6">
-                <img src="./images/drink_1.jpg" alt="">
-                <h3>Citrus Splash</h3>
-                <div class="price">$2.5</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-7">
-                <img src="./images/drink_2.jpg" alt="">
-                <h3>Wave Spritzer</h3>
-                <div class="price">$2.0</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-8">
-                <img src="./images/drink_3.jpg" alt="">
-                <h3>Iced Caramel</h3>
-                <div class="price">$3.0</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-9">
-                <img src="./images/drink_4.jpg" alt="">
-                <h3>Mint Cooler</h3>
-                <div class="price">$1.8</div>
-            </div>
-
-            <div class="swiper-slide slide" data-name="food-10">
-                <img src="./images/drink_5.jpg" alt="">
-                <h3>Peach Paradise</h3>
-                <div class="price">$2.0</div>
+        <div id="drink-swiper" class="swiper-wrapper">
             </div>
 
         </div>
