@@ -44,7 +44,7 @@
 
 <!-- header section ends -->
 
-<!-- cart and checkout section -->
+<!-- cart section start-->
 <div class="cart-container">
 
     <div id="close-cart-btn" class="fas fa-times"></div>
@@ -58,22 +58,10 @@
         <div class="order-container">
             <h1 class="price-header">PRICE</h1>
             <table class="price-summary">
-                <tr>
-                    <td>Speedy Supreme</td>
-                    <td class="cart-price">$5.5</td>
-                </tr>
-                <tr>
-                    <td>Citrus Splash</td>
-                    <td class="cart-price">$2.5</td>
-                </tr>
-                <tr>
-                    <td><h3>Total</h3></td>
-                    <td class="cart-price"><h3>$8.0</h3></td>
-                </tr>
             </table>
 
             <h1 class="order-heading">ORDER</h1>
-                <form class="order-form">
+                <form class="order-form" id="order-form">
                     <div>
                         <span>Full Name</span>
                         <label for="full-name"></label>
@@ -81,6 +69,8 @@
                           type="text"
                           placeholder="Enter your full name"
                           class="box"
+                          id="full-name"
+                          required
                         >
                     </div>
                     <div>
@@ -90,24 +80,46 @@
                           type="text"
                           placeholder="Enter your number"
                           class="box"
+                          id="number"
+                          required
                         >
                     </div>
                     <div>
                         <span>Address</span>
-                        <label for="location"></label>
+                        <label for="address"></label>
                         <input 
                           type="text"
-                          placeholder="Enter your location"
+                          placeholder="Enter your address"
                           class="box"
+                          id="address"
+                          required
                         >
                     </div>
-                    <input type="button" value="Order" class="btn">
+                    <input type="button" value="Order" class="btn" id="orderButton">
                 </form>
             </div>
         </div>
     </div>
 
 </div>
+<!-- cart section ends-->
+
+<!-- order detail section starts -->
+<div class="order-detail-container">
+    <div class="order-data">
+        <h1 class="order-detail-header">ORDER DETAIL</h1>
+        <div>Order ID : <span class="data-info" id="order-id"></span></div>
+        <div>Full Name : <div class="data-info" id="full-name-info"></div></div>
+        <div>Number : <div class="data-info" id="number-info"></div></div>
+        <div>Address : <div class="data-info" id="address-info"></div></div>
+        <div>Menu : </div>
+        <ul id= "ordered-menu" class="data-info">
+        </ul>
+        <button class="btn">Back to Home</button>
+    </div>
+</div>
+
+<!-- order detail section starts -->
 
 <!-- home section starts -->
 

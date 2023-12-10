@@ -126,7 +126,49 @@ section{
     color: var(--peru);
 }
 
-.login-form-container, .cart-container{
+.order-detail-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: var(--light-bg);
+}
+
+.order-data{
+    font-size:1.5rem;
+    width: 40rem;
+    max-height: 90%;
+    background-color: #fff;
+    padding: 3rem;
+    overflow-y: auto;
+}
+
+.order-data li{
+    display: grid;
+    grid-template-columns: 230px repeat(2, 1fr);
+    row-gap: 20px;
+}
+
+.order-data button{
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.order-data h1{
+    text-align: center;
+}
+
+.order-data .data-info{
+    padding: 1rem;
+}
+
+.order-data .food-quantity, .order-data .food-total-price{
+    text-align: right;
+}
+
+.cart-container, .order-detail-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,75 +180,11 @@ section{
     width: 100%;
 }
 
-.login-form-container.active, .cart-container.active{
+.cart-container.active , .order-detail-container.active{
     right:0;
 }
 
-.login-form-container form{
-    background: white;
-    border: var(--border);
-    width: 40rem;
-    padding: 2rem;
-    box-shadow: var(--box-shadow);
-    border-radius: 0.5rem;
-    margin: 2rem;
-}
-
-.login-form-container form h3{
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: var(--black);
-    text-align: center;
-}
-
-.login-form-container form span{
-    display: block;
-    font-size: 1.5rem;
-    padding-top: 1rem;
-}
-
-.login-form-container form .box{
-    width: 100%;
-    margin: 0.7rem 0;
-    font-size: 1.6rem;
-    border: var(--border);
-    border-radius: 0.5rem;
-    padding: 1rem 1.2rem;
-    color: var(--black);
-    text-transform: none;
-}
-
-.login-form-container form .checkbox{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 0;
-}
-
-.login-form-container form .checkbox label{
-    font-size: 1.5rem;
-    color: var(--black);
-    cursor: pointer; 
-}
-
-.login-form-container form .btn{
-    text-align: center;
-    width: 100%;
-    margin: 1.5rem 0;
-}
-
-.login-form-container form p{
-    padding-top: 0.8rem;
-    color: var(--black);
-    font-size: 1.5rem;
-}
-
-.login-form-container form p a{
-    color: var(--peru);
-    text-decoration: underline;
-}
-
-#close-login-btn, #close-cart-btn{
+#close-cart-btn, #close-order-btn{
     position: absolute;
     top:1.5rem; right:2.5rem;
     font-size: 5rem;
@@ -216,7 +194,7 @@ section{
 
 .checkout-container{
     display: flex;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     max-height: 95%;
     overflow-y: auto;
 }
@@ -262,11 +240,16 @@ section{
 .cart-list-container, .order-container{
     width : 40rem;
     background-color: #fff;
-    padding: 1.5rem;
+    padding: 3rem;
     max-height: 90%;
     overflow-y: auto;
 }
 
+.order-detail-header{
+    border-bottom: solid 2px;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
 
 .price-summary{
     border-collapse: separate;

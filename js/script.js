@@ -1,13 +1,11 @@
+// API url
 const API_URL = "https://be-2-medan-19-production.up.railway.app";
 
-// api start
-
+// Mengambil data dari database untuk slide menu makanan
 document.addEventListener('DOMContentLoaded', async() => {
   const response = await fetch(`${API_URL}/menu`);
 
   const menuData = await response.json();
-
-  // untuk pilihan menu makanan
   const foodContainer = document.querySelector('#food-swiper');
 
   menuData.slice(0,5).forEach(item => {
@@ -16,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       slide.dataset.name = `food-${item.menu_id}`;
 
       const img = document.createElement('img');
-      img.src = `./images/menu_${item.menu_id}.jpg`;
+      img.src = `./images/menu_${item.menu_id}.png`;
 
       const h3 = document.createElement('h3');
       h3.textContent = item.name;
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       foodContainer.appendChild(slide);
   })
 
-  // untuk pilihan menu minuman
+ // Mengambil data dari database untuk slide menu minuman
   const drinkContainer = document.querySelector('#drink-swiper');
 
   menuData.slice(5,10).forEach(item => {
@@ -41,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       slide.dataset.name = `food-${item.menu_id}`;
 
       const img = document.createElement('img');
-      img.src = `./images/menu_${item.menu_id}.jpg`;
+      img.src = `./images/menu_${item.menu_id}.png`;
 
       const h3 = document.createElement('h3');
       h3.textContent = item.name;
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       drinkContainer.appendChild(slide);
   })
 
-  // untuk priview menu
+  // Mengambil data dari database untuk preview menu
   const menuPreviewContainer = document.querySelector('#menu-previews');
   
   menuData.forEach(item => {
@@ -66,21 +64,13 @@ document.addEventListener('DOMContentLoaded', async() => {
       foodPreview.dataset.target = `food-${item.menu_id}`;
 
       const img = document.createElement('img');
-      img.src = `./images/menu_${item.menu_id}.jpg`;
+      img.src = `./images/menu_${item.menu_id}.png`;
 
       const h3 = document.createElement('h3');
       h3.textContent = item.name;
 
-      const stars = document.createElement('div');
-      stars.className = 'stars';
-      for (let i = 0; i < 5; i++) {
-      const star = document.createElement('i');
-      star.className = 'fas fa-star';
-      stars.appendChild(star);
-      }
-
       const p = document.createElement('p');
-      //p.textContent = item.description;
+      p.textContent = item.description;
 
       const price = document.createElement('div');
       price.className = 'price';
@@ -98,23 +88,22 @@ document.addEventListener('DOMContentLoaded', async() => {
           },
         })
         .then(response => {
-          console.log('Item added to cart!');
           UpdateCart();
+
+          document.querySelector('.food-preview.active').classList.remove('active');
+          document.querySelector('.food-preview-container').style.display = 'none';
         })
       })
 
       foodPreview.appendChild(img);
       foodPreview.appendChild(h3);
-      foodPreview.appendChild(stars);
       foodPreview.appendChild(p);
       foodPreview.appendChild(price);
       foodPreview.appendChild(addToCartBtn);
     
-      // Append dynamic food preview to the container
       menuPreviewContainer.appendChild(foodPreview);
     });
 
-    // preview menu box
     let previewContainer = document.querySelector('.food-preview-container');
     previewContainer.querySelector('#close-preview').onclick = () =>{
     previewContainer.style.display = 'none';
@@ -122,6 +111,8 @@ document.addEventListener('DOMContentLoaded', async() => {
     close.classList.remove('active');
     });
   };
+
+  // untuk menampilkan preview menu yang dipilih 
     let previewBox = previewContainer.querySelectorAll('.food-preview');
     document.querySelectorAll('.food .slide').forEach(food=>{
       food.onclick = () =>{
@@ -130,7 +121,6 @@ document.addEventListener('DOMContentLoaded', async() => {
         previewBox.forEach(preview =>{
           let target = preview.getAttribute('data-target');
           if(name == target){
-            console.log("test");
             preview.classList.add('active');
           }
         });
@@ -138,26 +128,26 @@ document.addEventListener('DOMContentLoaded', async() => {
     });
 });
 
-// to be corrected
-
+// function untuk memperbarui cart apabila ada perubahan
 async function UpdateCart() {
   const response = await fetch(`${API_URL}/cart`);
   
   const cartData = await response.json();
 
-  // cart item list
-
+  // menghapus menu yang sebelumnya
   const cartList = document.querySelector('.cart-list');
   while (cartList.firstChild){
     cartList.removeChild(cartList.firstChild);
   }
+
+  // untuk bagian pilihan menu
   cartData.forEach(item => {
       const list = document.createElement('li');
 
       const foodImageDiv = document.createElement('div');
       foodImageDiv.className = 'food-img';
       const foodImage = document.createElement('img');
-      foodImage.src = `./images/menu_${item.menu_id}.jpg`;
+      foodImage.src = `./images/menu_${item.menu_id}.png`;
       foodImageDiv.appendChild(foodImage);
 
       const foodNameDiv = document.createElement('div');
@@ -214,7 +204,7 @@ async function UpdateCart() {
       cartList.appendChild(list);
   });
 
-  // item in order list
+  // untuk bagian harga
   const priceSummary = document.querySelector('.price-summary');
   let total = 0.0;
   while (priceSummary.rows.length > 0){
@@ -254,17 +244,101 @@ async function UpdateCart() {
   priceSummary.appendChild(tableRow);
 }
 
+// function membuat order
+  async function createOrder() {
+    const dataInfo = document.querySelectorAll('.data-info');
+  
+    dataInfo.forEach(element => {
+      if (element.tagName.toLowerCase() === 'ul'){
+        while (element.firstChild)
+        {
+          element.removeChild(element.firstChild);
+        }
+      }
+      else{
+        element.textContent = '';
+      } 
+    });
+  
+    const response = await fetch(`${API_URL}/order`);
+    const orderData = await response.json();
+    const id = orderData.length-1;
+    console.log(orderData[id]);
+    console.log(orderData[id].full_name);
+  
+    document.getElementById('order-id').textContent = orderData[id].order_id;
+    const debug = document.getElementById('full-name-info').textContent = orderData[id].full_name;
+    document.getElementById('number-info').textContent = orderData[id].number;
+    document.getElementById('address-info').textContent = orderData[id].address;
+    let total = 0.0;
+  
+  
+    const orderedMenuList = document.getElementById('ordered-menu');
+    orderData[id].ordered_menu.forEach(item => {
+      total += item.price * item.quantity;
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+          <div class="food-name">${item.name}</div>
+          <div class="food-quantity">x ${item.quantity}</div>
+          <div class="food-total-price">$${item.quantity * item.price}</div>
+      `;
+          orderedMenuList.appendChild(listItem);
+    });
+  
+    const totalListItem = document.createElement('li');
+    totalListItem.innerHTML = `
+          <div class="food-name"><h3>Total</h3></div>
+          <div></div>
+          <div class="food-total-price"><h3>$${total}</h3></div>
+      `;
+      orderedMenuList.appendChild(totalListItem);
+  }
+  
+  // memberi function membuat order pada tombol order
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('orderButton').addEventListener('click', async () =>{
+        const fullName = document.getElementById("full-name").value;
+        const number = document.getElementById("number").value;
+        const address = document.getElementById("address").value;
+  
+        const response = await fetch(`${API_URL}/cart`);
+        const cartData = await response.json();
+  
+        if(cartData.length < 1){
+          alert("Please choose your menu to order");
+          return;
+        }
+        if(!fullName || !number || !address)
+        {
+          alert("Please fill your information");
+          return;
+        }
+  
+        fetch(`${API_URL}/order`, {
+           method: 'POST',
+           headers: {
+              'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({
+               full_name: fullName,
+               number: number,
+               address: address,
+           })
+          })
+          .then (response => {
+            UpdateCart();
+            orderDetail.classList.toggle('active');
+            cartForm.classList.remove('active');
+            createOrder();
+            document.getElementById('order-form').reset();
+          })
+    });
+  });
+
+// melakukan update cart saat membuka halaman
 document.addEventListener('DOMContentLoaded', async() => {
-  fetch(`${API_URL}/cart/`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type' : 'application/json',
-    },
-  })
   UpdateCart();
 })
-
-// api end
 
 let navbar = document.querySelector('.header .navbar');
 let menuBtn = document.querySelector('#menu-btn');
@@ -283,6 +357,13 @@ document.querySelector('#cart-btn').onclick = () =>{
 document.querySelector('#close-cart-btn').onclick = () =>{
   cartForm.classList.remove('active');
 }
+
+let orderDetail = document.querySelector('.order-detail-container');
+
+document.querySelector('.order-data .btn').onclick = () =>{
+  orderDetail.classList.remove('active');
+}
+
 
 var swiper = new Swiper(".home-slider", {
     grabCursor:true,
@@ -351,3 +432,4 @@ var swiper = new Swiper(".blogs-slider", {
     },
   },
 });
+
