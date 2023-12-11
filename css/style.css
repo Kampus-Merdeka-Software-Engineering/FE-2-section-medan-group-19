@@ -184,7 +184,7 @@ section{
     right:0;
 }
 
-#close-cart-btn, #close-order-btn{
+#close-cart-btn{
     position: absolute;
     top:1.5rem; right:2.5rem;
     font-size: 5rem;
@@ -525,15 +525,6 @@ section{
     color: var(--black);
 }
 
-.food-preview-container .food-preview .stars{
-    margin-top: 0.5rem;
-}
-
-.food-preview-container .food-preview .stars i{
-    font-size: 1.7rem;
-    color: var(--peru);
-}
-
 .food-preview-container .food-preview p{
     font-size: 1.6rem;
     color: var(--light-black);
@@ -556,7 +547,7 @@ section{
     color: var(--white);
 }
 
-#close-preview:hover{
+#close-preview:hover, #close-cart-btn:hover{
     transform: rotate(90deg);
 }
 
